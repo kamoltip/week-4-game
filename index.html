@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>week-4-game</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	
+</head>
+<body>
+	
+	<div class="container h1">
+	<div class="row">
+	<div class="col-md-12">
+		<h1>CRYSTALS COLLECTOR!<h1>
+	</div>
+	
+	</div>
+	</div>
+
+	
+	<div id="ruleHead">Rules</div>
+	<div id="ruleContent">You will be given a random number at the start of the game.
+	<br> There are four crystals below. By clicking on a crystal, you will add a specific amount of points to your total score.
+	<br>
+	You win the game by matching your total score to ramdom number, you lose the game if your total score go above the random number.
+	<br>
+	The value of each crystal is hidden from you until you click on it.
+	<br>
+	Each time when the game starts, the game will change the value of each crystal.
+
+	</div>
+	<div class="container game">
+		<div class="row">
+			<div class="col-md-6 randomNo">
+				<div id="randomNo">50</div>
+			</div>
+			<div class="col-md-6 score">
+				<div id="winCounter"><p>wins:</p>0</div>
+				<div id="loseCounter"><p>losses:</p>0</div>
+			</div>
+			
+		</div>
+
+		<div class="row">
+			<div class="col-md-6 assets">
+
+				<div><img src="assets/images/blue.png" width="90px" alt="blue"></div>
+				<div><img src="assets/images/green.png" width="90px" alt="green"></div>
+				<div><img src="assets/images/red.png" width= "90px" alt="red"></div>
+				<div><img src="assets/images/yellow.png" width ="90px" alt="yellow"></div>
+
+				
+
+			</div>
+			<div class="col-md-6">
+				<div class="row">
+					
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+	
+	
+
+
+<script type="text/javascript" src="assets/javascript/game.js"></script>
+</body>
+</html>
+
