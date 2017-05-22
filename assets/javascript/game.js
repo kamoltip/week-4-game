@@ -73,6 +73,10 @@ crystal("#green");
 crystal("#red");
 crystal("#yellow");  
 
+var newwinCounter = 0;
+var newloseCounter = 0;
+var winCounter = 0;
+var loseCounter = 0;
 var yourScore;
 var value;
 function getValue() {
@@ -83,7 +87,7 @@ function getValue() {
 		console.log(yourScore);
 		$("#totalScore").html(yourScore);
 		
-		var loseCounter = 0;
+		
 		if(yourScore > randomnumber){
 			loseCounter++;
 			$("#loseCounter").html(loseCounter++);
@@ -92,7 +96,6 @@ function getValue() {
 			$("#gameResult").hide("YOU LOSE!!!");
 			}
 
-		var winCounter = 0;
 		if(yourScore === randomnumber){
 			winCounter++;
 			console.log(winCounter);
@@ -102,8 +105,6 @@ function getValue() {
 			$("#gameResult").hide("YOU WIN!!!");
 		} 
 
-		var newloseCounter = 0;
-		var newwinCounter = 0;
 		if(yourScore >= randomnumber){
 			yourScore = 0;
 			$(getNumber).reset;
