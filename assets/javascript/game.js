@@ -14,18 +14,6 @@
 // .. user score and score counter reset to 0.
 //wins & loses counter stay update to the end.
 
-
-// #randomNo;
-// #totalScore;
-// #winCounter;
-// #loseCounter;
-// #blue;
-// #green;
-// #red;
-// #yellow;
-
-
-
 // rule Intro//
 $("#ruleHead").click(function(){
 $("#ruleContent").slideDown(3000);
@@ -34,10 +22,16 @@ $("#close").click(function(){
 $("#ruleContent").slideUp(1500);
 });
 
-
 //generate random No.//
 
-	var randomnumber;
+var yourScore = 0;
+var scoreCounter;
+var winCounter = 0;
+var loseCounter = 0;
+var yourScore;
+var value;
+var randomnumber;
+
 function getNumber() {
     var minNumber = 20; 
     var maxNumber = 90; 
@@ -45,40 +39,23 @@ function getNumber() {
     $('#randomNo').html(randomnumber); 
     console.log(randomnumber);
     return randomnumber;
-
 }
-
-getNumber();
+	getNumber();
 
 //set value to the crystals//
-// var blue;
-// var green;
-// var red;
-// var yellow;
-
-var yourScore = 0;
-var scoreCounter;
-	
+crystal("#blue");
+crystal("#green");
+crystal("#red");
+crystal("#yellow");
 function crystal(id){
 	scoreCounter = $("#totalScore")
 	var crystalMin = 1; 
     var crystalMax = 11; 
     blueRandom = Math.floor(Math.random() * (crystalMax) + crystalMin)+1; 
     $(id).attr('value', blueRandom);
-
     return blueRandom;
-}
-crystal("#blue");
-crystal("#green");
-crystal("#red");
-crystal("#yellow");  
+}  
 
-var newwinCounter = 0;
-var newloseCounter = 0;
-var winCounter = 0;
-var loseCounter = 0;
-var yourScore;
-var value;
 function getValue() {
 	$(".value").on("click", function () {
 		value = $(this).attr("value");
@@ -87,10 +64,18 @@ function getValue() {
 		console.log(yourScore);
 		$("#totalScore").html(yourScore);
 		
-		
+		if (loseCounter === 10){
+			confirm("YOU LOSE!!! Your losing score : " + loseCounter + " Your winning score : "  + winCounter + " Try harder!");
+			location.reload();
+		}
+
+		if (winCounter === 10){
+			confirm("YOU WIN!!! Your losing score : " + loseCounter + " Your winning score : "  + winCounter + " Good job!");
+			location.reload();
+		}
 		if(yourScore > randomnumber){
 			loseCounter++;
-			$("#loseCounter").html(loseCounter++);
+			$("#loseCounter").html(loseCounter);
 			$("#gameResult").html("YOU LOSE!!!");
 			$("#gameResult").show("YOU LOSE!!!");
 			$("#gameResult").hide("YOU LOSE!!!");
@@ -108,8 +93,9 @@ function getValue() {
 		if(yourScore >= randomnumber){
 			yourScore = 0;
 			$(getNumber).reset;
-
-	}
+		}
+	
+	
 });
 }
 getValue();

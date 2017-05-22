@@ -128,3 +128,8 @@ img{
 	border-color: black;
 	box-shadow: 2px 2px;
 }
+.open{
+	font-size: 12px;
+	color: darkgrey;
+	margin-right: 10px;
+}
