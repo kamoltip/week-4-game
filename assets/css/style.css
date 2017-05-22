@@ -76,14 +76,14 @@ p{
 }
 
 #winCounter{
-font-size: 30px;
+font-size: 70px;
 	color: white;
 	float: left;
 	text-align: center;
 }
 
 #loseCounter{
-font-size: 30px;
+font-size: 70px;
 	color: white;
 	float: left;
 	text-align: center;
@@ -93,7 +93,7 @@ font-size: 30px;
 	flex-flow: column-reverse;
 	flex-direction: flex-end;
 	float: left;
-	font-size: 35px;
+	font-size: 70px;
 	color: red;
 }
 

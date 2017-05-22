@@ -41,8 +41,8 @@ $("#ruleContent").slideUp(1500);
 function getNumber() {
     var minNumber = 20; 
     var maxNumber = 90; 
-    randomnumber = Math.floor(Math.random() * (maxNumber) + minNumber)+1; // Generates random number
-    $('#randomNo').html(randomnumber); // Sets content of <div> to number
+    randomnumber = Math.floor(Math.random() * (maxNumber) + minNumber)+1; 
+    $('#randomNo').html(randomnumber); 
     console.log(randomnumber);
     return randomnumber;
 
@@ -55,9 +55,6 @@ getNumber();
 // var green;
 // var red;
 // var yellow;
-
-
-//scoring for blue crystal//
 
 var yourScore = 0;
 var scoreCounter;
@@ -86,31 +83,39 @@ function getValue() {
 		console.log(yourScore);
 		$("#totalScore").html(yourScore);
 		
-		var loseCounter=0;
+		var loseCounter = 0;
 		if(yourScore > randomnumber){
 			loseCounter++;
-			$("#loseCounter").html(loseCounter);
-		} 
-		var winCounter=0;
+			$("#loseCounter").html(loseCounter++);
+			$("#gameResult").html("YOU LOSE!!!");
+			$("#gameResult").show("YOU LOSE!!!");
+			$("#gameResult").hide("YOU LOSE!!!");
+			}
+
+		var winCounter = 0;
 		if(yourScore === randomnumber){
 			winCounter++;
+			console.log(winCounter);
 			$("#winCounter").html(winCounter);
-		}
-		if(winCounter === 1){
-			$("#gameResult").html("YOU WIN!!!")
-		}
-		if(loseCounter === 1){
-			$("#gameResult").html("YOU LOSE!!!")
-		}
-});
+			$("#gameResult").html("YOU WIN!!!");
+			$("#gameResult").show("YOU WIN!!!");
+			$("#gameResult").hide("YOU WIN!!!");
+		} 
 
+		var newloseCounter = 0;
+		var newwinCounter = 0;
+		if(yourScore >= randomnumber){
+			yourScore = 0;
+			$(getNumber).reset;
+
+	}
+});
 }
 getValue();
 
-	
 
 
-	
+
 
 	
 	
