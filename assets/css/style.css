@@ -31,12 +31,11 @@ h1 {
 
 #ruleHead, #ruleContent {
 
-	padding:10px;
 	text-align: center;
 	background-color: black;
 	opacity: 0.5;
 	border:solid 1px antiquewhite;
-	margin-top: 5px;
+	margin-top: 3px;
 }
 
 #ruleContent{
@@ -45,6 +44,7 @@ h1 {
 	color: white;
 }
 #ruleHead{
+	padding-top: 5px;
 	font-size: 30px;
 	color: red;
 }

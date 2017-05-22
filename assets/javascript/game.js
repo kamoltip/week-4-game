@@ -42,18 +42,18 @@ function getNumber() {
 }
 	getNumber();
 
-//set value to the crystals//
-crystal("#blue");
-crystal("#green");
-crystal("#red");
-crystal("#yellow");
-function crystal(id){
-	scoreCounter = $("#totalScore")
-	var crystalMin = 1; 
-    var crystalMax = 11; 
-    blueRandom = Math.floor(Math.random() * (crystalMax) + crystalMin)+1; 
-    $(id).attr('value', blueRandom);
-    return blueRandom;
+	//set value to the crystals//
+	crystal("#blue");
+	crystal("#green");
+	crystal("#red");
+	crystal("#yellow");
+	function crystal(id){
+		scoreCounter = $("#totalScore")
+		var crystalMin = 1; 
+	    var crystalMax = 11; 
+	    blueRandom = Math.floor(Math.random() * (crystalMax) + crystalMin)+1; 
+	    $(id).attr('value', blueRandom);
+	    return blueRandom;
 }  
 
 function getValue() {
@@ -90,9 +90,15 @@ function getValue() {
 			$("#gameResult").hide("YOU WIN!!!");
 		} 
 
+		// Reset Diamond //
+
 		if(yourScore >= randomnumber){
 			yourScore = 0;
 			$(getNumber).reset;
+			$(crystal("#blue")).reset;
+			$(crystal("#red")).reset;
+			$(crystal("#green")).reset;
+			$(crystal("#yellow")).reset;
 		}
 	
 	
